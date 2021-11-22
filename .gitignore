@@ -7,3 +7,6 @@
 
 # .tfvars files
 *.tfvars
+
+# lock file
+.terraform.lock.hcl
