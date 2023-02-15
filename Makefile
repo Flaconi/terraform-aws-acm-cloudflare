@@ -11,9 +11,9 @@ TF_MODULES  = $(sort $(dir $(wildcard $(CURRENT_DIR)modules/*/)))
 # -------------------------------------------------------------------------------------------------
 # Container versions
 # -------------------------------------------------------------------------------------------------
-TF_VERSION      = 0.13.7
-TFDOCS_VERSION  = 0.15.0-0.29
-FL_VERSION      = 0.4
+TF_VERSION      = 1.0.11
+TFDOCS_VERSION  = 0.16.0-0.31
+FL_VERSION      = latest-0.8
 JL_VERSION      = 1.6.0-0.5
 
 
@@ -79,14 +79,10 @@ test: _pull-tf
 		echo "------------------------------------------------------------"; \
 		if docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" hashicorp/terraform:$(TF_VERSION) \
 			init \
-				-verify-plugins=true \
-				-lock=false \
 				-upgrade=true \
 				-reconfigure \
 				-input=false \
-				-get-plugins=true \
-				-get=true \
-				.; then \
+				-get=true; then \
 			echo "OK"; \
 		else \
 			echo "Failed"; \

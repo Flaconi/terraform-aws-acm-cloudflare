@@ -3,12 +3,12 @@ terraform {
   required_providers {
     cloudflare = {
       source  = "cloudflare/cloudflare"
-      version = ">= 3.2, <= 3.32.0"
+      version = ">= 3.34"
     }
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 3"
+      version = ">= 4"
     }
   }
-  required_version = ">= 0.12.26"
+  required_version = ">= 1.0"
 }
