@@ -17,8 +17,8 @@ Create ACM certificate with DNS validation and validate using Cloudflare Hosted 
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4 |
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | >= 3.34 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | >= 4.20 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -28,8 +28,8 @@ Create ACM certificate with DNS validation and validate using Cloudflare Hosted 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | >= 3.34 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | >= 4.20 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
