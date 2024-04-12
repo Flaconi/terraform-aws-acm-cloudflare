@@ -3,6 +3,7 @@
 [![lint](https://github.com/flaconi/terraform-aws-acm-cloudflare/workflows/lint/badge.svg)](https://github.com/flaconi/terraform-aws-acm-cloudflare/actions?query=workflow%3Alint)
 [![test](https://github.com/flaconi/terraform-aws-acm-cloudflare/workflows/test/badge.svg)](https://github.com/flaconi/terraform-aws-acm-cloudflare/actions?query=workflow%3Atest)
 [![Tag](https://img.shields.io/github/tag/flaconi/terraform-aws-acm-cloudflare.svg)](https://github.com/flaconi/terraform-aws-acm-cloudflare/releases)
+[![Terraform](https://img.shields.io/badge/Terraform--registry-aws--acm--cloudflare-brightgreen.svg)](https://registry.terraform.io/modules/flaconi/acm-cloudflare/aws/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Create ACM certificate with DNS validation and validate using Cloudflare Hosted Zone
