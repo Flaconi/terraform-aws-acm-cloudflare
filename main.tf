@@ -19,7 +19,7 @@ resource "aws_acm_certificate" "this" {
 resource "cloudflare_record" "validation" {
   count = var.create_certificate && var.validate_certificate ? length(local.distinct_domain_names) : 0
 
-  zone_id = data.cloudflare_zone.this.id
+  zone_id = data.cloudflare_zone.this[0].id
   name    = element(local.validation_domains, count.index)["resource_record_name"]
   type    = element(local.validation_domains, count.index)["resource_record_type"]
   value   = replace(element(local.validation_domains, count.index)["resource_record_value"], "/.$/", "")
