@@ -1,4 +1,4 @@
 data "cloudflare_zone" "this" {
-  count = var.create_certificate ? 1 : 0
-  name  = var.zone_name
+  for_each = { for d, p in local.domain_validation_providers : d => p if p.provider == "cloudflare" }
+  name = each.value.zone_domain
 }

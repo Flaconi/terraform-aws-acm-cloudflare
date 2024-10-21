@@ -7,7 +7,7 @@ module "this" {
   domain_name = "test-san.${var.domain_name}"
 
   subject_alternative_names = [
-    "subdomain.test-san.${var.domain_name}",
-    "test-other.${var.domain_name}"
+    ["subdomain.test-san.${var.domain_name}", "cloudflare"],
+    ["test-other.${var.domain_name}", "cloudflare"]
   ]
 }

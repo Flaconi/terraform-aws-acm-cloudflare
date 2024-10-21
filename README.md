@@ -45,12 +45,6 @@ Description: The Cloudflare API token.
 
 Type: `string`
 
-### <a name="input_zone_name"></a> [zone\_name](#input\_zone\_name)
-
-Description: The Name of the zone to contain this record.
-
-Type: `string`
-
 ## Optional Inputs
 
 The following input variables are optional (have default values):
@@ -103,11 +97,19 @@ Type: `string`
 
 Default: `""`
 
+### <a name="input_dns_validation_provider"></a> [dns\_validation\_provider](#input\_dns\_validation\_provider)
+
+Description: DNS validation provider setting for the domain name; either aws zone id or cloudflare
+
+Type: `string`
+
+Default: `"cloudflare"`
+
 ### <a name="input_subject_alternative_names"></a> [subject\_alternative\_names](#input\_subject\_alternative\_names)
 
-Description: A list of domains that should be SANs in the issued certificate
+Description: The list of domains and their dns providers as tuples; either aws zone id or cloudflare as dns provider
 
-Type: `list(string)`
+Type: `list(tuple([string, string]))`
 
 Default: `[]`
 
@@ -135,10 +137,6 @@ Default: `120`
 | Name | Description |
 |------|-------------|
 | <a name="output_acm_certificate_arn"></a> [acm\_certificate\_arn](#output\_acm\_certificate\_arn) | The ARN of the certificate |
-| <a name="output_acm_certificate_domain_validation_options"></a> [acm\_certificate\_domain\_validation\_options](#output\_acm\_certificate\_domain\_validation\_options) | A list of attributes to feed into other resources to complete certificate validation. Can have more than one element, e.g. if SANs are defined. |
-| <a name="output_distinct_domain_names"></a> [distinct\_domain\_names](#output\_distinct\_domain\_names) | List of distinct domains names used for the validation. |
-| <a name="output_validation_dns_record_fqdns"></a> [validation\_dns\_record\_fqdns](#output\_validation\_dns\_record\_fqdns) | List of FQDNs built using the zone domain and name. |
-| <a name="output_validation_domains"></a> [validation\_domains](#output\_validation\_domains) | List of distinct domain validation options. This is useful if subject alternative names contain wildcards. |
 
 <!-- TFDOCS_OUTPUTS_END -->
 

@@ -40,15 +40,16 @@ variable "domain_name" {
   default     = ""
 }
 
-variable "subject_alternative_names" {
-  description = "A list of domains that should be SANs in the issued certificate"
-  type        = list(string)
-  default     = []
+variable "dns_validation_provider" {
+  description = "DNS validation provider setting for the domain name; either aws zone id or cloudflare"
+  type        = string
+  default     = "cloudflare"
 }
 
-variable "zone_name" {
-  description = "The Name of the zone to contain this record."
-  type        = string
+variable "subject_alternative_names" {
+  description = "The list of domains and their dns providers as tuples; either aws zone id or cloudflare as dns provider"
+  type        = list(tuple([string, string]))
+  default     = []
 }
 
 variable "tags" {
