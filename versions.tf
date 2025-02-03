@@ -3,7 +3,7 @@ terraform {
   required_providers {
     cloudflare = {
       source  = "cloudflare/cloudflare"
-      version = ">= 4.41"
+      version = "~> 4.41"
     }
     aws = {
       source  = "hashicorp/aws"
