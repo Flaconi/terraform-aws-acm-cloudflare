@@ -18,8 +18,8 @@ Create ACM certificate with DNS validation and validate using Cloudflare Hosted 
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5 |
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | 4.52.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 6.10 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.8 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -28,9 +28,9 @@ Create ACM certificate with DNS validation and validate using Cloudflare Hosted 
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | 4.52.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 6.10 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.8 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
@@ -45,6 +45,12 @@ Description: The Cloudflare API token.
 
 Type: `string`
 
+### <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name)
+
+Description: A domain name for which the certificate should be issued
+
+Type: `string`
+
 ### <a name="input_zone_name"></a> [zone\_name](#input\_zone\_name)
 
 Description: The Name of the zone to contain this record.
@@ -55,25 +61,9 @@ Type: `string`
 
 The following input variables are optional (have default values):
 
-### <a name="input_create_certificate"></a> [create\_certificate](#input\_create\_certificate)
-
-Description: Whether to create ACM certificate
-
-Type: `bool`
-
-Default: `true`
-
 ### <a name="input_validate_certificate"></a> [validate\_certificate](#input\_validate\_certificate)
 
 Description: Whether to validate certificate by creating DNS record
-
-Type: `bool`
-
-Default: `true`
-
-### <a name="input_validation_allow_overwrite_records"></a> [validation\_allow\_overwrite\_records](#input\_validation\_allow\_overwrite\_records)
-
-Description: Whether to allow overwrite of Route53 records
 
 Type: `bool`
 
@@ -95,14 +85,6 @@ Type: `bool`
 
 Default: `true`
 
-### <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name)
-
-Description: A domain name for which the certificate should be issued
-
-Type: `string`
-
-Default: `""`
-
 ### <a name="input_subject_alternative_names"></a> [subject\_alternative\_names](#input\_subject\_alternative\_names)
 
 Description: A list of domains that should be SANs in the issued certificate
@@ -110,6 +92,14 @@ Description: A list of domains that should be SANs in the issued certificate
 Type: `list(string)`
 
 Default: `[]`
+
+### <a name="input_key_algorithm"></a> [key\_algorithm](#input\_key\_algorithm)
+
+Description: Specifies the algorithm of the public and private key pair that your Amazon issued certificate uses to encrypt data.
+
+Type: `string`
+
+Default: `"RSA_2048"`
 
 ### <a name="input_tags"></a> [tags](#input\_tags)
 
