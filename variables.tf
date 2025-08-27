@@ -1,9 +1,3 @@
-variable "cloudflare_api_token" {
-  description = "The Cloudflare API token."
-  type        = string
-  sensitive   = true
-}
-
 variable "validate_certificate" {
   description = "Whether to validate certificate by creating DNS record"
   type        = bool
