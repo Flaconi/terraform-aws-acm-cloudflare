@@ -12,5 +12,4 @@ locals {
       o if o.domain_name == d
     ][0]
   }
-
 }

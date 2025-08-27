@@ -20,7 +20,7 @@ resource "cloudflare_dns_record" "this" {
   for_each = var.validate_certificate ? toset(local.distinct_domain_names) : []
 
   zone_id = local.zone_id
-  name    = local.validation_domains[each.key]["resource_record_name"]
+  name    = replace(local.validation_domains[each.key]["resource_record_name"], "/.$/", "")
   type    = local.validation_domains[each.key]["resource_record_type"]
   content = replace(local.validation_domains[each.key]["resource_record_value"], "/.$/", "")
   ttl     = var.dns_ttl
@@ -34,5 +34,5 @@ resource "aws_acm_certificate_validation" "this" {
 
   certificate_arn = aws_acm_certificate.this.arn
 
-  validation_record_fqdns = [for key, record in cloudflare_dns_record.this: record.name]
+  validation_record_fqdns = [for key, record in cloudflare_dns_record.this : record.name]
 }

@@ -10,7 +10,7 @@ output "acm_certificate_domain_validation_options" {
 
 output "validation_dns_record_fqdns" {
   description = "List of FQDNs built using the zone domain and name."
-  value       = [for key, record in cloudflare_dns_record.this: record.name]
+  value       = [for key, record in cloudflare_dns_record.this : record.name]
 }
 
 output "distinct_domain_names" {
