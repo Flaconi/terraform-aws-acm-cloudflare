@@ -4,20 +4,8 @@ variable "cloudflare_api_token" {
   sensitive   = true
 }
 
-variable "create_certificate" {
-  description = "Whether to create ACM certificate"
-  type        = bool
-  default     = true
-}
-
 variable "validate_certificate" {
   description = "Whether to validate certificate by creating DNS record"
-  type        = bool
-  default     = true
-}
-
-variable "validation_allow_overwrite_records" {
-  description = "Whether to allow overwrite of Route53 records"
   type        = bool
   default     = true
 }
@@ -37,7 +25,6 @@ variable "certificate_transparency_logging_preference" {
 variable "domain_name" {
   description = "A domain name for which the certificate should be issued"
   type        = string
-  default     = ""
 }
 
 variable "subject_alternative_names" {
@@ -49,6 +36,12 @@ variable "subject_alternative_names" {
 variable "zone_name" {
   description = "The Name of the zone to contain this record."
   type        = string
+}
+
+variable "key_algorithm" {
+  description = "Specifies the algorithm of the public and private key pair that your Amazon issued certificate uses to encrypt data."
+  type        = string
+  default     = "RSA_2048"
 }
 
 variable "tags" {

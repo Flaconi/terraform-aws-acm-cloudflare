@@ -1,4 +1,3 @@
-data "cloudflare_zone" "this" {
-  count = var.create_certificate ? 1 : 0
-  name  = var.zone_name
+data "cloudflare_zones" "this" {
+  name = var.zone_name
 }
