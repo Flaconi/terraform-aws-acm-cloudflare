@@ -39,12 +39,6 @@ Create ACM certificate with DNS validation and validate using Cloudflare Hosted 
 
 The following input variables are required:
 
-### <a name="input_cloudflare_api_token"></a> [cloudflare\_api\_token](#input\_cloudflare\_api\_token)
-
-Description: The Cloudflare API token.
-
-Type: `string`
-
 ### <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name)
 
 Description: A domain name for which the certificate should be issued
